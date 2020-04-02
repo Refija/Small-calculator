@@ -1,0 +1,35 @@
+#ifndef MAINWINDOW_H
+#define MAINWINDOW_H
+
+#include <QMainWindow>
+
+namespace Ui {
+class MainWindow;
+}
+
+class MainWindow : public QMainWindow
+{
+    Q_OBJECT
+
+public:
+    explicit MainWindow(QWidget *parent = 0);
+    ~MainWindow();
+//
+   // QRadioButton::QRadioButton(const QString &text, QWidget *parent = Q_NULLPTR);
+    double age, height, weight, total;
+
+private:
+    Ui::MainWindow *ui;
+
+protected:
+    void changeEvent(QEvent *e);
+    void Calculate();
+private slots:
+
+    void on_Calculate_clicked();
+    void on_pushCalculate_clicked();
+    void on_exMale_clicked();
+    void on_exFemale_clicked();
+};
+
+#endif // MAINWINDOW_H
